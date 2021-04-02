@@ -58,3 +58,9 @@ def peak_idx_mount_arr_bs(arr):
             low = mid + 1
         high = mid
     return low
+
+
+if __name__ == "__main__":
+    print(peak_idx_mount_arr_bs([24, 69, 100, 99, 79, 78, 67, 36, 26, 1, 9]))
+    print(peak_idx_mount_array([1, 10, 5, 2]))
+    print(peak_idx_mount_array([1, 75, 55, 2]))
