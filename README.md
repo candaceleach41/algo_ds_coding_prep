@@ -3,6 +3,9 @@ Using this repository to work on coding problems to prep for coding interviews.
 
 Going to use the README file to add updates to my progress.
 
-As of 4/1/2021, I will be doing easy problems!
- - Mainly fousing on arrays and string problems and work my way up to the next DS problems.
- - Alrighty, as of 4/2/2021, next progression will be trees and linked list.
+From now on, I will be doing easy/medium problems.
+  - Possibility once or every other month, plan on doing a hard problem!!!
+  - Goal is to solve two coding problems in a 45 minute time limit (looking into starting that in 2 months)
+  - Keep in mind, I do have to brush up on algo/ds since it's been a very long time I touched on the subject.
+ 
+Started this journey in 4/1/2021!
