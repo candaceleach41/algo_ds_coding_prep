@@ -34,6 +34,8 @@ This solution is using stack.
 """
 
 
+# Time: O(n)
+# Space: O(n)
 def remove_dups(string, k):
     stack = []
     for char in string:
