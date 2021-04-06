@@ -27,7 +27,8 @@ Input: s = "abc3[cd]xyz"
 Output: "abccdcdcdxyz"
 """
 
-
+# Time: O(n) N is the length of the string
+# Space O(n) 
 def decode_string(string):
     stack = []
     cur_num = 0
@@ -52,3 +53,4 @@ def decode_string(string):
 
 if __name__ == "__main__":
     print(decode_string("3[a]2[bc]"))
+    print(decode_string("abc3[cd]xyz"))
