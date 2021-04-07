@@ -53,3 +53,4 @@ def merge_two_sorted_iter(l1, l2):
 
     curr.next = l1 or l2
     return head.next
+
