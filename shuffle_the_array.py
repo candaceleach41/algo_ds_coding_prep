@@ -18,6 +18,8 @@ Output: [1,2,1,2]
 """
 
 
+# Time: O(n)
+# Space: O(n)
 def shuffle(nums, n):
     result = []
     for i in range(n):
