@@ -34,6 +34,24 @@ def is_palindrome(head):
     return not rev
 
 
+# Another solution (saw this one after submitting the above solution
+def is_palindrome_2(head):
+    values = []
+    current = head
+    while current:
+        values.append(current.val)
+        current = current.next
+
+    left = 0
+    right = len(values) - 1
+    while left <= right:
+        if values[left] != values[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+
 if __name__ == "__main__":
     # returns True
     head = ListNode(1)
