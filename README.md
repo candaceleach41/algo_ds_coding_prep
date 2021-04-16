@@ -12,10 +12,12 @@ Started this journey in 4/1/2021!
 
 Update status 4/8/2021:
   - Making progress with finding patterns and try to solve them.
-  - Went from 90 minutes to solving a problem to 65 minutes.
+  - Went from 65 minutes to solving a problem to 80 minutes. (update 4/16/2021)
+      - Took a bit longer on some of the DS probles
   - Solved a lot of easy problems so far, will get to the medium ones soon.
-  - Spend weekend on going over the problems I solved.
-  - Some problems I had a hard time with, I did look at the solutions to get a better understanding.
+  - Working with another engineer on our though process and thinking out loud. (update 4/16/2021)
+  - Some problems I had a hard time with, I did look at the solutions(if I stay stuck for 15 minutes) 
+    to get a better understanding.
 
 
 
