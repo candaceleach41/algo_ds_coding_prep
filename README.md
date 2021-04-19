@@ -19,6 +19,7 @@ Update status:
   - Some problems I had a hard time with, I did look at the solutions(if I stay stuck for 15 minutes) 
     to get a better understanding.
     
+As of 4/19/2021:
   - This week, I'll be going over linked list (Single, Doubly, Circular.) Expect me to push some LL coding problems
     a bit slower this week (probably about one a day or every other day) 
     
