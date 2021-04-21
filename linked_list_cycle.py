@@ -35,7 +35,7 @@ Explanation: There is no cycle in the linked list.
 
 # Time: O(n) - len of the list
 # Space: O(1) not using extra space
-# Two pointer approach 
+# Two pointer approach
 class Node:
     def __init__(self, val, next=None):
         self.val = val
