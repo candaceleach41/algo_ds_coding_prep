@@ -78,4 +78,3 @@ def vertical_order(root):
         for i in sorted_keys:
             vert_order.append(dist_map[i])
         return vert_order
-
