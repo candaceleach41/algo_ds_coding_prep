@@ -40,7 +40,7 @@ def level_order(root):
     result = []
     queue.append(root)
 
-    while len(queue):
+    while queue:
         ans = []
         for i in range(len(queue)):
             node = queue.pop(0)
