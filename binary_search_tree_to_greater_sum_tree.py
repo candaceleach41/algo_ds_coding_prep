@@ -44,7 +44,8 @@ class Node:
         self.left = left
         self.right = right
 
-
+# Time: O(n) - n is the number of nodes
+# Space: O(n) - using stack for extra space
 def bst_to_gst(root):
     sum = 0
     cur = root
@@ -57,4 +58,17 @@ def bst_to_gst(root):
         cur.val += sum
         sum = cur.val
         cur = cur.left
+    return root
+
+
+# another solution
+def bst_to_gst_2(self, root):
+    val = 0
+    def inorder(node):
+        if node:
+            inorder(node.right)
+            node.val += self.val
+            self.val = node.val
+            inorder(node.left)
+    inorder(root)
     return root
