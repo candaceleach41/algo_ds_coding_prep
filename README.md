@@ -23,6 +23,9 @@ As of 4/19/2021:
   - This week, I'll be going over linked list (Single, Doubly, Circular.) Expect me to push some LL coding problems
     a bit slower this week (probably about one a day or every other day)
   - Adding trees into this week's agenda (update 4/22/2021)    
+  - Adding heap problems into the tree agenda and learning a bit of recursion (update 4/29/2021)
+     - Won't push a lot of recursion problems (currently learning those as well)
+
 
     
 
