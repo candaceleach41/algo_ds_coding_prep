@@ -24,7 +24,7 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 """
 
 
-# Time: O(n log n) - sorting based on the start 
+# Time: O(n log n) - sorting based on the start
 # Space: O(n) - additional space to store the results
 def merge_intervals(intervals):
     if len(intervals) <= 1:
@@ -37,7 +37,6 @@ def merge_intervals(intervals):
         else:
             result.append(interval)
     return result
-
 
 
 def merge_intervals_2(intervals):
