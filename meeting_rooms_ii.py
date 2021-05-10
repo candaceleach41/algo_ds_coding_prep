@@ -26,3 +26,8 @@ def min_meeting_rooms(intervals):
         else:
             heapq.heappush(heap, end)
     return len(heap)
+    # return heap
+
+
+if __name__ == "__main__":
+    print(min_meeting_rooms([[0, 30], [5, 10], [15, 20], [9, 16], [11, 14]]))
