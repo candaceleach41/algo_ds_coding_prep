@@ -26,6 +26,11 @@ As of 4/19/2021:
   - Adding heap problems into the tree agenda and learning a bit of recursion (update 4/29/2021)
      - Won't push a lot of recursion problems (currently learning those as well)
 
+As of 5/3/2021:
+  - Will be going over recursion and coding problems that I already completed.
+  - Won't be pushing problems into my Github this week.
+  - Have a mock interview coming up this week to see where I'm at.
+
 
     
 
