@@ -15,18 +15,20 @@ import heapq
 
 
 # Time: O(n log n) - sorting based on start time (intervals[0])
-# Space: O(n): - storing heap
+# Space: O(n): - storing the end time in the heap
 def min_meeting_rooms(intervals):
     intervals = sorted(intervals, key=lambda x: x[0])
-    heap = []
+    heap = []  # stores the end time of intervals
 
     for start, end in intervals:
         if heap and heap[0] <= start:
+            # means two intervals can use the same room
             heapq.heapreplace(heap, end)
         else:
+            # a new room is allocated
             heapq.heappush(heap, end)
     return len(heap)
-    # return heap
+
 
 
 if __name__ == "__main__":
