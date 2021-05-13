@@ -48,3 +48,20 @@ def find_bottom_left_value_bfs(self, root):
             break
         levels = nxt
     return ans
+
+
+from collections import deque
+def find_bottom_left_value_2(root):
+    queue = deque()
+    queue.append(root)
+    res = 0
+    while queue:
+        node = queue.popleft()
+        res = node.val
+        if node.right:
+            queue.append(node.right)
+
+        if node.left:
+            queue.append(node.left)
+    return res
+
