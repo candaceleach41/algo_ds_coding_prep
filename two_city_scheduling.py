@@ -44,13 +44,12 @@ def two_city_scheduling(costs):
 
 # Another solution
 def two_city_scheduling_2(costs):
-    cost = sorted(costs, key=lambda x: x[0]-x[1])
-    cost_a = 0
-    cost_b = 0
-    for i in range(len(cost) // 2):
-        cost_a += cost[i][0]
-
-    for i in range(len(cost_a)//2, len(cost)):
-        cost_b += cost[i][1]
-    return cost_a + cost_b
+    cost = 0
+    costs.sort(key=lambda x: x[0] - x[1])
+    for i, x in enumerate(costs):
+        if i < len(costs) / 2:
+            cost += x[0]
+        else:
+            cost += x[1]
+    return cost
 
