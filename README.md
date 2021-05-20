@@ -31,6 +31,13 @@ As of 5/3/2021:
   - Won't be pushing problems into my Github this week.
   - Have a mock interview coming up this week to see where I'm at.
 
+As of 5/20/2021 (forgot to update last week):
+  - Went over binary search last week and added some solutions.
+  - Had a mock interview to see where I was standing.
+  - Going over dynamic programming for a bit (probably won't add solutions since I want to make sure I
+    have a better understanding of the topic.)
+  - Also doing hashtable problems for this week and next.
+
 
     
 
