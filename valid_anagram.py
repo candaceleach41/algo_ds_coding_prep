@@ -10,7 +10,8 @@ Input: s = "rat", t = "car"
 Output: false
 """
 
-
+# Time: O(n)
+# Space: O(1)
 def is_anagram(s, t):
     # If both s and t does not have the same length, return False
     if len(s) != len(t):
