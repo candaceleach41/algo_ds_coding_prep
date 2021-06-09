@@ -43,6 +43,24 @@ def sum_of_all_off_len_subarrays(arr):
     return result
 
 
+# Time: O(n) - n is the length of the array
+# Space: O(1) - not using extra storage
+def sum_of_all_len_subarays_ii(arr):
+    n = len(arr)
+    start, end, total, sum_total = 0, 0, 0, 0
+    i = 0
+    while i < n:
+        start = n - i
+        end = i + 1
+        total = start * end
+        odd = total // 2
+        if total % 2 == 1:
+            odd += 1
+        sum_total += odd * arr[i]
+        i += 1
+    return sum_total
+
+
 # Time: O(n)
 # Space: O(1)
 def sum_of_all_off_len_subarrays_opt(arr):
