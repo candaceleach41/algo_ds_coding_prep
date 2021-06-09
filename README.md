@@ -38,7 +38,11 @@ As of 5/20/2021 (forgot to update last week):
     have a better understanding of the topic.)
   - Also doing hashtable problems for this week and next.
 
-
+As of 6/9/2021:
+  - I'm going to upload an updated solution in one of the problems.
+  - For the next two to three weeks, I will be going over problems that I already solved
+    so there won't be any uploading during that time, unless I added another solution
+    to that problem.
     
 
 
