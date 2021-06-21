@@ -24,3 +24,12 @@ def defang_ip_address(address):
         else:
             result.append('[.]')
     return "".join(result)
+
+
+# ---------------------------------------
+# Optimized Solution
+def defang_ip_addr(address):
+    return address.replace('.', '[.]')
+
+if __name__ == "__main__":
+    print(defang_ip_addr("255.255.255.0"))
