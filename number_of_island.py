@@ -30,10 +30,6 @@ Output: 3
 
 
 def numIslands(grid):
-    """
-    :type grid: List[List[str]]
-    :rtype: int
-    """
     if not grid:
         return 0
 
@@ -56,11 +52,3 @@ def dfs(grid, row, col):
     dfs(grid, row, col + 1)  # Right
     dfs(grid, row, col - 1)  # Left
 
-
-if __name__ == "__main__":
-    print(numIslands([
-        ["1", "1", "0", "0", "0"],
-        ["1", "1", "0", "0", "0"],
-        ["0", "0", "1", "0", "0"],
-        ["0", "0", "0", "1", "1"]
-    ]))
