@@ -42,3 +42,11 @@ def sqrt_sorted_arr(nums):
             left += 1
         result[i] = square * square
     return result
+
+
+# -----------------------------------------------
+# One line solution
+# Time: O(n log n)
+# Space: O(1)
+def sqrt_sorted_arr_oneliner(nums):
+    return sorted([num ** 2 for num in nums])
