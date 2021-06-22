@@ -1,55 +1,32 @@
 """
-Given a string s, a k duplicate removal consists of choosing k adjacent
-and equal letters from s and removing them causing the left and the right
-side of the deleted substring to concatenate together.
+You are given a string s consisting of lowercase English letters. A duplicate removal
+consists of choosing two adjacent and equal letters and removing them.
 
-We repeatedly make k duplicate removals on s until we no longer can.
+We repeatedly make duplicate removals on s until we no longer can.
 
-Return the final string after all such duplicate removals have been made.
-
-It is guaranteed that the answer is unique.
+Return the final string after all such duplicate removals have been made. It can be
+proven that the answer is unique.
 
 Example 1:
-Input: s = "abcd", k = 2
-Output: "abcd"
-Explanation: There's nothing to delete.
+Input: s = "abbaca"
+Output: "ca"
+Explanation:
+For example, in "abbaca" we could remove "bb" since the letters are adjacent and
+equal, and this is the only possible move.  The result of this move is that the
+string is "aaca", of which only "aa" is possible, so the final string is "ca".
 
 Example 2:
-Input: s = "deeedbbcccbdaa", k = 3
-Output: "aa"
-Explanation:
-First delete "eee" and "ccc", get "ddbbbdaa"
-Then delete "bbb", get "dddaa"
-Finally delete "ddd", get "aa"
-
-Example 3:
-Input: s = "pbbcggttciiippooaais", k = 2
-Output: "ps"
-
-There are two options that could be use to solve this problem:
-    - Pointers
-    - Stack
-
-This solution is using stack.
+Input: s = "azxxzy"
+Output: "ay"
 """
 
-
-# Time: O(n)
-# Space: O(n)
-def remove_dups(string, k):
+# Time: O(n) - n is the length of the string
+# Space: O(n) - using stack for extra storage
+def removeDuplicates(string):
     stack = []
-    for char in string:
-        if not stack or stack[-1][0] != char:
-            stack.append([char])
-        elif stack[-1][0] == char:
-            if len(stack[-1]) == k - 1:
-                stack.pop()
-            else:
-                stack[-1].append(char)
-    return "".join("".join(i) for i in stack)
-
-
-if __name__ == "__main__":
-    print(remove_dups("deeedbbcccbdaa", 3))
-    print(remove_dups("abcd", 2))
-    print(remove_dups("pbbcggttciiippooaais", 2))
+    for i in range(len(string)):
+        if stack and stack[-1] == string[i]:
+            stack.pop()
+        else:
+            stack.append(string[i])
+    return "".join(stack)
