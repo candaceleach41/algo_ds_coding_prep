@@ -27,18 +27,13 @@ Output: false
 """
 
 
-def is_palindrome(x):
-    if x < 0:
+def is_palindrome(num):
+    if num < 0:
         return False
 
-    result = 0
-    while x:
-        result = result * 10 + x % 10
-        x /= 10
-    return result == x
+    res = 0
+    while num:
+        res = res * 10 + (num % 10)
+        num //= 10
+    return res
 
-
-if __name__ == "__main__":
-    print(is_palindrome(121))
-    print(is_palindrome(-121))
-    print(is_palindrome(123))
