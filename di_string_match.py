@@ -33,5 +33,8 @@ def di_string_match(string):
         elif x == "D":
             result.append(str_d)
             str_d -= 1
-    result.append(str_i)
+    if string[len(string) - 1] == "D":
+        result.append(str_d)
+    else:
+        result.append(str_i)
     return result
