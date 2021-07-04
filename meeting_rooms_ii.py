@@ -30,6 +30,17 @@ def min_meeting_rooms(intervals):
     return len(heap)
 
 
+def min_meeting_rooms_ii(intervals):
+    rooms_available = []
+    intervals.sort(key=lambda x: x[0])
+    heapq.heappush(rooms_available, intervals[0][1])
+
+    for i in intervals[1:]:
+        if i[0] >= rooms_available[0]:
+            heapq.heappop(rooms_available)
+        heapq.heappush(rooms_available, i[1])
+    return len(rooms_available)
+
 
 if __name__ == "__main__":
     print(min_meeting_rooms([[0, 30], [5, 10], [15, 20], [9, 16], [11, 14]]))
