@@ -104,3 +104,12 @@ class BrowserHistoryDLL:
         return self.root.data
 
 
+if __name__ == "__main__":
+    bh = BrowserHistoryDLL("http://www.bloomberg.com/articles/123")
+    bh.visit("http://www.bbc.com")
+    bh.visit("http://www.cnn.com")
+    print(bh.back(1))
+    print(bh.forward(1))
+    bh.visit("http://www.google.com?search=hello")
+
+
