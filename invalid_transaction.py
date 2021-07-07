@@ -73,7 +73,38 @@ def invalid_transaction(transactions) -> List[str]:
     return result
 
 
+#------------------------------Another Solution using Hashtable and sorting-----------
+from collections import defaultdict
+def invalid_transaction_ii(transactions):
+    if not transactions:
+        return []
+
+    dic = defaultdict(list)
+    length = len(transactions)
+    valid = [True] * length
+    for idx, trans in enumerate(transactions):
+        name, time, amount, city = trans.split(",")
+        if int(amount) > 1000:
+            return False
+        dic[name].append((int(time), city, idx))
+
+    for name in dic:
+        dic[name].sort(key=lambda x: x[0])
+        for i in range(len(dic[name])):
+            time1, city1, idx1 = dic[name][i]
+            for j in range(i+1, len(dic[name])):
+                time2, city2, idx2 = dic[name][j]
+                if city1 == city2 or (not valid[idx1] and not valid[idx2]):
+                    continue
+                if time2 - time1 <= 60:
+                    valid[idx1], valid[idx2] = False, False
+                else:
+                    break
+
+    return [transactions[i] for i in range(length) if not valid[i]]
+
+
 if __name__ == "__main__":
-    print(invalid_transaction(["alice,20,800,mtv", "alice,50,100,beijing"]))
+    print(invalid_transaction_ii(["alice,20,800,mtv", "alice,50,100,beijing"]))
     print(invalid_transaction(["alice,20,800,mtv", "alice,50,1200,mtv"]))
-    print(invalid_transaction(["alice,20,800,mtv", "bob,50,1200,mtv"]))
+    print(invalid_transaction_ii(["alice,20,800,mtv", "bob,50,1200,mtv"]))
