@@ -80,28 +80,29 @@ def invalid_transaction_ii(transactions):
         return []
 
     dic = defaultdict(list)
-    length = len(transactions)
-    valid = [True] * length
-    for idx, trans in enumerate(transactions):
-        name, time, amount, city = trans.split(",")
+    n = len(transactions)
+    valid = [True] * n
+
+    for index, trans in enumerate(transactions):
+        name, time, amount, city = trans.split(',')
         if int(amount) > 1000:
-            return False
-        dic[name].append((int(time), city, idx))
+            valid[index] = False
+        dic[name].append((int(time), city, index))
 
     for name in dic:
         dic[name].sort(key=lambda x: x[0])
         for i in range(len(dic[name])):
-            time1, city1, idx1 = dic[name][i]
-            for j in range(i+1, len(dic[name])):
-                time2, city2, idx2 = dic[name][j]
-                if city1 == city2 or (not valid[idx1] and not valid[idx2]):
+            time1, city1, index1 = dic[name][i]
+            for j in range(i + 1, len(dic[name])):
+                time2, city2, index2 = dic[name][j]
+                if city1 == city2 or (not valid[index1] and not valid[index2]):
                     continue
-                if time2 - time1 <= 60:
-                    valid[idx1], valid[idx2] = False, False
+                if time2 - time1 <= 60:  
+                    valid[index1], valid[index2] = False, False
                 else:
                     break
 
-    return [transactions[i] for i in range(length) if not valid[i]]
+    return [transactions[i] for i in range(n) if not valid[i]]
 
 
 if __name__ == "__main__":
