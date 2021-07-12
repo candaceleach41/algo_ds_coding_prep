@@ -97,7 +97,7 @@ def invalid_transaction_ii(transactions):
                 time2, city2, index2 = dic[name][j]
                 if city1 == city2 or (not valid[index1] and not valid[index2]):
                     continue
-                if time2 - time1 <= 60:  
+                if time2 - time1 <= 60:
                     valid[index1], valid[index2] = False, False
                 else:
                     break
