@@ -10,8 +10,9 @@ Input: s = "rat", t = "car"
 Output: false
 """
 
+
 # Time: O(n)
-# Space: O(1)
+# Space: O(n)
 def is_anagram(s, t):
     # If both s and t does not have the same length, return False
     if len(s) != len(t):
@@ -32,7 +33,14 @@ def is_anagram(s, t):
     return True
 
 
-if __name__ == "__main__":
-    print(is_anagram("warrior", "rorriaw"))  # True
-    print(is_anagram("cat", "at"))  # False
-    print(is_anagram("", ""))  # True
+# ------------------ Another solution using set ------------------------
+
+# Time: O(n)
+# Space: O(1)
+def is_anagram_set(s, t):
+    if set(s) != set(t):
+        return False
+    for i in set(s):
+        if s.count(i) != t.count(i):
+            return False
+    return True
