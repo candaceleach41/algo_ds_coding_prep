@@ -54,28 +54,26 @@ undergroundSystem.getAverageTime("Leyton", "Waterloo");    // return 12.00000. T
 from collections import defaultdict
 
 
-# Time: O(1)
-# Space: O(N^2) + O(C) - N is the number of stations and C is the number of customers in the system
 class UndergroundSystem:
     def __init__(self):
-        self.customer_info = {}
-        self.destination = defaultdict(list)
+        self.customer_info = defaultdict(dict)
+        self.routes = defaultdict(list)
 
     def check_in(self, id, station_name, t):
         self.customer_info[id] = [station_name, t]
 
     def check_out(self, id, station_name, t):
-        start_station, start_time = self.customer_info[id]
-        key = f"{start_station}:{station_name}"
-        value = t - start_time
-        if key not in self.destination:
-            self.destination[key] = [value, 1]
+        checkin_station, checkin_time = self.customer_info[id]
+        if (checkin_station, station_name) not in self.routes:
+            self.routes[(checkin_station, station_name)] = [t - checkin_time, 1]
         else:
-            avg, count = self.destination[key]
-            self.destination[key] = [(avg * count + value) / (count + 1), count + 1]
+            self.routes[(checkin_station, station_name)][0] += t - checkin_time
+            self.routes[(checkin_station, station_name)][1] += 1
+
+        del self.customer_info[id]
 
     def get_avg_time(self, start_station, end_station):
-        return self.destination[f"{start_station}:{end_station}"][0]
+        return float(self.routes[(start_station, end_station)][0]) / self.routes[(start_station, end_station)][1]
 
 
 if __name__ == "__main__":
@@ -84,7 +82,7 @@ if __name__ == "__main__":
     subway.check_in(32, "Paradise", 8)
     subway.check_in(27, "Leyton", 10)
     subway.check_out(45, "Waterloo", 15)
-    subway.check_out(45, "Waterloo", 20)
+    subway.check_out(27, "Waterloo", 20)
     subway.check_out(32, "Cambridge", 22)
     subway.get_avg_time("Paradise", "Cambridge")
     subway.get_avg_time("Leyton", "Waterloo")
