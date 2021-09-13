@@ -37,3 +37,21 @@ def maximum_units(box_types, truck_size):
         max_units += num_boxes * unit
         truck_size -= num_boxes
     return max_units
+
+
+# -------------------- Another Solution -------------------------
+
+def maximum_units_2(box_types, truck_size):
+    box_types_sorted = sorted(box_types, key=lambda x: x[1], reverse=True)
+    num_units = 0
+    for box_type in box_types_sorted:
+        num_boxes = min(box_type[0], truck_size)
+        num_units += num_boxes * box_type[1]
+        truck_size -= num_boxes
+        if truck_size == 0:
+            break
+    return num_units
+
+
+if __name__ == "__main__":
+    maximum_units([[5, 10], [2, 5], [4, 7], [3, 9]], 10)
