@@ -23,6 +23,7 @@ Input: root = [1,2,3,4,null,5,6,null,null,7]
 Output: 7
 """
 
+
 # Time: O(n)
 # Space: O(n)
 class Node:
@@ -49,6 +50,24 @@ def find_bottom_left_value(root):
     return ans
 
 
+#  another solution going right to left level order
+from collections import deque
+
+
+def find_bottom_left_value2(root):
+    queue = deque([root])
+
+    while queue:
+        node = queue.popleft()
+
+        if node.right:
+            queue.append(node.right)
+        if node.left:
+            queue.append(node.left)
+
+    return node.val
+
+
 if __name__ == "__main__":
     root = Node(1)
     root.left = Node(2)
@@ -59,4 +78,3 @@ if __name__ == "__main__":
     root.right.left.left = Node(7)
 
     print(find_bottom_left_value(root))
-
