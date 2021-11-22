@@ -53,3 +53,17 @@ def two_city_scheduling_2(costs):
             cost += x[1]
     return cost
 
+# Another solution
+def two_city_scheduling_3(costs):
+    min_cost = 0
+
+    costs.sort(key=lambda x: x[0] - x[1])
+
+    for cost in range(len(costs) // 2): 
+        min_cost += costs[cost][0]
+
+    for cost in range(len(costs) // 2, len(costs)):
+        min_cost += costs[cost][1]
+
+    return min_cost
+
