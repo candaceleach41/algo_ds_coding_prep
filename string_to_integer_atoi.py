@@ -105,9 +105,9 @@ def atoi(s):
     if not s:
         return 0
     sign, i = 1, 0
-    if s[i] == "+":
+    if s.startswith("+"):
         i += 1
-    elif s[i] == "-":
+    elif s.startswith("-"):
         sign = -1
         i += 1
     result = 0
