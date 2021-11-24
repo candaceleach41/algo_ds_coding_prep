@@ -24,23 +24,22 @@ class ListNode:
 
 # This is using the sliding window approach
 def reverse_between(head, left, right):
-    if left >= right:
-        return head
-
-    outside_head = dummy = ListNode(0)
-    window_head = window_tail = head
+    dummy = ListNode(-1)
     dummy.next = head
+
+    prev = dummy
+    curr = dummy.next
+
+    for i in range(1, left):
+        curr = curr.next
+        prev = prev.next
+
     for i in range(right - left):
-        window_tail = window_tail.next
+        temp = curr.next
+        curr.next = temp.next
+        temp.next = prev.next
+        prev.next = temp
 
-    for i in range(left - 1):
-        outside_head = window_head
-        window_head = window_head.next
-        window_tail = window_tail.next
-
-    outside_tail, window_tail.next = window_tail.next, None
-    rev_head, rev_tail = reverse_list(window_head)
-    outside_head.next, rev_tail.next = rev_head, outside_tail
     return dummy.next
 
 
