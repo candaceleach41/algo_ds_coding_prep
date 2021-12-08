@@ -25,10 +25,9 @@ values are set beyond the returned length.
 # Time: O(n)
 # Space: O(1)
 def remove_duplicates(nums):
-    idx = 1
-    for i in range(len(nums) - 1):
-        if nums[i] != nums[i+1]:
-            nums[idx] = nums[i+1]
-            idx += 1
-
-    return idx
+    dup_nums = 0
+    for i in range(1, len(nums)):
+        if nums[i] != nums[dup_nums]:
+            dup_nums += 1
+            nums[dup_nums], nums[i] = nums[i], nums[dup_nums]
+    return dup_nums + 1
