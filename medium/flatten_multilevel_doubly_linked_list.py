@@ -50,3 +50,29 @@ def flatten(head):
             head.next.prev = head
         head = head.next
     return cur
+
+
+# ---------------- Another solution without extra storage ------------
+
+
+def flatten_2(head):
+    if head is None:
+        return
+
+    curr = head
+    while head:
+        if head.child is None:
+            head = head.next
+            continue
+        temp = head.child
+        while temp.next:
+            temp = temp.next
+        if head.next:
+            temp.next = head.next
+            head.next.prev = temp
+        head.next = head.child
+        head.child.prev = head
+        head.child = None
+        head = head.next
+
+    return curr
