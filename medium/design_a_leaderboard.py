@@ -30,15 +30,16 @@ class Leaderboard:
             self.scores[player_id] += score
 
     def top(self, K):
-        heap = []
-        for x in self.scores.values():
-            heappush(heap, x)
-            if len(heap) > K:
-                heappop(heap)
-        result = 0
-        while heap:
-            result += heappop(heap)
-        return result
+        # heap = []
+        # for x in self.scores.values():
+        #     heappush(heap, x)
+        #     if len(heap) > K:
+        #         heappop(heap)
+        # result = 0
+        # while heap:
+        #     result += heappop(heap)
+        # return result
+        return sum(sorted(self.player_score.values(), reverse=True)[:K])
 
     def reset(self, player_id):
         # del self.scores[playerId]
