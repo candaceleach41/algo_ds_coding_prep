@@ -39,7 +39,7 @@ class Leaderboard:
         # while heap:
         #     result += heappop(heap)
         # return result
-        return sum(sorted(self.player_score.values(), reverse=True)[:K])
+        return sum(sorted(self.scores.values(), reverse=True)[:K])
 
     def reset(self, player_id):
         # del self.scores[playerId]
